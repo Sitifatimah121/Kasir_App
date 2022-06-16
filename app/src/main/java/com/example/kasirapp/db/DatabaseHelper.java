@@ -1,7 +1,11 @@
 package com.example.kasirapp.db;
 
-public class DatabaseHelper {
-    public static String DATABASE_NAME = "dbnoteapp";
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+    public static String DATABASE_NAME = "dbbarangapp";
 
     private static final int DATABASE_VERSION = 1;
 
@@ -18,4 +22,19 @@ public class DatabaseHelper {
             DatabaseContract.BarangColumns.JUMLAH,
             DatabaseContract.BarangColumns.DATE
     );
+
+    public DatabaseHelper(Context context){
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(SQL_CREATE_TABLE_BARANG);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int old, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.TABLE_NAME);
+        onCreate(db);
+    }
 }
