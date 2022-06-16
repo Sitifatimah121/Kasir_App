@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/KasirApp/app/src/main/res/layout/activity_barang_crud.xml" value="0.1" />
+        <entry key="..\:/Android/KasirApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/KasirApp/app/src/main/res/layout/item_barang.xml" value="0.4" />
+        <entry key="..\:/Android/KasirApp/app/src/main/res/menu/menu_form.xml" value="0.1" />
       </map>
     </option>
   </component>
