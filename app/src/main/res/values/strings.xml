@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KasirApp</string>
+    <string name="date">date</string>
+    <string name="name">Nama Barang</string>
+    <string name="code">Kode Barang</string>
+    <string name="stok">Stok</string>
 </resources>
