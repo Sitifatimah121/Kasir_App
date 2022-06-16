@@ -53,6 +53,25 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
         }
     }
 
+    // add item
+    public void addItem(Barang barang){
+        this.listBarang.add(barang);
+        notifyItemInserted(listBarang.size() -1);
+    }
+
+    // update item
+    public void updateItem(int position, Barang barang){
+        this.listBarang.set(position, barang);
+        notifyItemChanged(position, barang);
+    }
+
+    // remove item
+    public void removeItem(int position){
+        this.listBarang.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, listBarang.size());
+    }
+
     public interface OnItemClickCallback {
         void onItemClicked(Barang selectedBarang, Integer position);
     }
