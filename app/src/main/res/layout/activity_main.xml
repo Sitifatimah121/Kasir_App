@@ -15,7 +15,7 @@
         app:layout_anchor="@id/rv_notes"
         app:layout_anchorGravity="center" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_notes"
+        android:id="@+id/rv_barang"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
