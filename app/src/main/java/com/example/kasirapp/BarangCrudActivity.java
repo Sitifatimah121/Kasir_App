@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class BarangCrudActivity extends AppCompatActivity implements View.OnClic
     private final int ALERT_DIALOG_CLOSE = 10;
     private final int ALERT_DIALOG_DELETE = 20;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +81,7 @@ public class BarangCrudActivity extends AppCompatActivity implements View.OnClic
                 edtKode.setText(barang.getKode_barang());
                 edtName.setText(barang.getNama_barang());
                 Log.d(TAG, "onCreate: why" + barang.getJumlah_barang());
-                edtJumlah.setText(barang.getJumlah_barang());
+                edtJumlah.setText(Integer.toString(barang.getJumlah_barang()));
             }
         } else {
             actionBarTitle = "Tambah";
