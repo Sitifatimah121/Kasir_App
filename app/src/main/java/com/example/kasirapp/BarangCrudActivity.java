@@ -100,7 +100,7 @@ public class BarangCrudActivity extends AppCompatActivity implements View.OnClic
         if (view.getId() == R.id.btn_submit){
             String kode = edtKode.getText().toString().trim();
             String name = edtName.getText().toString().trim();
-            String jumlah = edtJumlah.toString().trim();
+            String jumlah = edtJumlah.getText().toString().trim();
 
             if (TextUtils.isEmpty(name)){
                 edtName.setError("Field can not be blank");
@@ -119,7 +119,7 @@ public class BarangCrudActivity extends AppCompatActivity implements View.OnClic
             ContentValues values = new ContentValues();
             values.put(KODE, kode);
             values.put(NAMA_BARANG, name);
-            values.put(String.valueOf(JUMLAH), jumlah);
+            values.put(JUMLAH, jumlah);
 
             if (isEdit) {
                 long result = barangHelper.update(String.valueOf(barang.getId()), values);
