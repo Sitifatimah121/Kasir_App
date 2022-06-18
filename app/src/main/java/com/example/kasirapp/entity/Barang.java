@@ -10,46 +10,12 @@ public class Barang implements Parcelable {
     private int jumlah_barang;
     private String date;
 
-    public Barang(int id, String kode_barang, String nama_barang, int jumlah_barang, String date){
-        this.id = id;
-        this.kode_barang = kode_barang;
-        this.nama_barang = nama_barang;
-        this.jumlah_barang = jumlah_barang;
-        this.date = date;
-    }
-
-    protected Barang(Parcel in) {
-        id = in.readInt();
-        kode_barang = in.readString();
-        nama_barang = in.readString();
-        jumlah_barang = in.readInt();
-        date = in.readString();
-    }
-
-    public static final Creator<Barang> CREATOR = new Creator<Barang>() {
-        @Override
-        public Barang createFromParcel(Parcel in) {
-            return new Barang(in);
-        }
-
-        @Override
-        public Barang[] newArray(int size) {
-            return new Barang[size];
-        }
-    };
-
-    public Barang() {
-
-    }
-
     //getter and setter
     public int getId(){
         return id;
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
+    public void setId(int id){ this.id = id; }
 
     public String getKode_barang(){
         return kode_barang;
@@ -90,10 +56,43 @@ public class Barang implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
-        parcel.writeString(kode_barang);
-        parcel.writeString(nama_barang);
-        parcel.writeInt(jumlah_barang);
-        parcel.writeString(date);
+        parcel.writeInt(this.id);
+        parcel.writeString(this.kode_barang);
+        parcel.writeString(this.nama_barang);
+        parcel.writeInt(this.jumlah_barang);
+        parcel.writeString(this.date);
     }
+
+    public Barang() {
+
+    }
+
+    public Barang(int id, String kode_barang, String nama_barang, int jumlah_barang, String date){
+        this.id = id;
+        this.kode_barang = kode_barang;
+        this.nama_barang = nama_barang;
+        this.jumlah_barang = jumlah_barang;
+        this.date = date;
+    }
+
+    protected Barang(Parcel in) {
+        this.id = in.readInt();
+        this.kode_barang = in.readString();
+        this.nama_barang = in.readString();
+        this.jumlah_barang = in.readInt();
+        this.date = in.readString();
+    }
+
+    public static final Parcelable.Creator<Barang> CREATOR = new Parcelable.Creator<Barang>() {
+        @Override
+        public Barang createFromParcel(Parcel in) {
+            return new Barang(in);
+        }
+
+        @Override
+        public Barang[] newArray(int size) {
+            return new Barang[size];
+        }
+    };
+
 }

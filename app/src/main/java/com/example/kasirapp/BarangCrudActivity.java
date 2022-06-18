@@ -1,5 +1,6 @@
 package com.example.kasirapp;
 
+import static android.content.ContentValues.TAG;
 import static com.example.kasirapp.db.DatabaseContract.BarangColumns.DATE;
 import static com.example.kasirapp.db.DatabaseContract.BarangColumns.JUMLAH;
 import static com.example.kasirapp.db.DatabaseContract.BarangColumns.KODE;
@@ -13,6 +14,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -107,6 +109,7 @@ public class BarangCrudActivity extends AppCompatActivity implements View.OnClic
 
             barang.setKode_barang(kode);
             barang.setNama_barang(name);
+            Log.d(TAG, "onClick: jumlah" + jumlah);
             barang.setJumlah_barang(Integer.parseInt(jumlah));
 
             Intent intent = new Intent();

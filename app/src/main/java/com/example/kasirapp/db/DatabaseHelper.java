@@ -1,31 +1,44 @@
 package com.example.kasirapp.db;
 
 import static com.example.kasirapp.db.DatabaseContract.BarangColumns.TABLE_NAME;
+import static com.example.kasirapp.db.DatabaseContract.BarangColumns;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
-    public static String DATABASE_NAME = "dbbarangapp";
+class DatabaseHelper extends SQLiteOpenHelper {
+    public static final String DATABASE_NAME = "dbbarangapp";
 
     private static final int DATABASE_VERSION = 1;
 
-    private static final String SQL_CREATE_TABLE_BARANG = String.format(
-            "CREATE TABLE %S" + "(%s INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    " %s VARCHAR NOT NULL," +
-                    " %s VARCHAR NOT NULL," +
-                    " %s VARCHAR NOT NULL," +
+//    private static final String SQL_CREATE_TABLE_NOTE = String.format("CREATE TABLE %s"
+//                    + " (%s INTEGER PRIMARY KEY AUTOINCREMENT," +
+//                    " %s TEXT NOT NULL," +
+//                    " %s TEXT NOT NULL," +
+//                    " %s TEXT NOT NULL)",
+//            DatabaseContract.TABLE_NAME,
+//            NoteColumns._ID,
+//            NoteColumns.TITLE,
+//            NoteColumns.DESCRIPTION,
+//            NoteColumns.DATE
+//    );
+
+    private static final String SQL_CREATE_TABLE_BARANG = String.format("CREATE TABLE %s"
+                    + " (%s INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    " %s TEXT NOT NULL," +
+                    " %s TEXT NOT NULL," +
+                    " %s INTEGER," +
                     " %s TEXT NOT NULL)",
             TABLE_NAME,
-            DatabaseContract.BarangColumns._ID,
-            DatabaseContract.BarangColumns.KODE,
-            DatabaseContract.BarangColumns.NAMA_BARANG,
-            DatabaseContract.BarangColumns.JUMLAH,
-            DatabaseContract.BarangColumns.DATE
+            BarangColumns._ID,
+            BarangColumns.KODE,
+            BarangColumns.NAMA_BARANG,
+            BarangColumns.JUMLAH,
+            BarangColumns.DATE
     );
 
-    public DatabaseHelper(Context context){
+    DatabaseHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

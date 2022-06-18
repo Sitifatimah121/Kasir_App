@@ -1,7 +1,8 @@
 package com.example.kasirapp.db;
 
 import static android.provider.BaseColumns._ID;
-import static com.example.kasirapp.db.DatabaseContract.TABLE_NAME;
+
+import static com.example.kasirapp.db.DatabaseContract.BarangColumns.TABLE_NAME;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,13 +14,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BarangHelper {
     private static final String DATABASE_TABLE = TABLE_NAME;
     private static DatabaseHelper dataBaseHelper;
+    private static BarangHelper INSTANCE;
+
     private static SQLiteDatabase database;
 
     private BarangHelper(Context context){
         dataBaseHelper = new DatabaseHelper(context);
     }
 
-    private static BarangHelper INSTANCE;
 
     public static BarangHelper getInstance(Context context){
         if (INSTANCE == null){
@@ -80,6 +82,6 @@ public class BarangHelper {
 
     //delete data
     public int deleteById(String id) {
-        return database.delete(DATABASE_TABLE, _ID + " = " + id, null);
+        return database.delete(DATABASE_TABLE, _ID + " = ?", new String[]{id});
     }
 }

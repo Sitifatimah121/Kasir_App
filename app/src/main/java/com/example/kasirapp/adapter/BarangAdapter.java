@@ -46,7 +46,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvKode.setText(listBarang.get(position).getKode_barang());
         holder.tvName.setText(listBarang.get(position).getNama_barang());
-        holder.tvJumlah.setText(listBarang.get(position).getJumlah_barang());
+        holder.tvJumlah.setText(String.valueOf(listBarang.get(position).getJumlah_barang()));
         holder.tvDate.setText(listBarang.get(position).getDate());
         holder.cvBarang.setOnClickListener(v -> onItemClickCallback.onItemClicked(listBarang.get(position), position));
     }
