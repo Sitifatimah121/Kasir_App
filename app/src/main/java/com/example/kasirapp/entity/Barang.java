@@ -38,6 +38,10 @@ public class Barang implements Parcelable {
         }
     };
 
+    public Barang() {
+
+    }
+
     //getter and setter
     public int getId(){
         return id;
