@@ -78,6 +78,7 @@ public class BarangCrudActivity extends AppCompatActivity implements View.OnClic
             if (barang != null) {
                 edtKode.setText(barang.getKode_barang());
                 edtName.setText(barang.getNama_barang());
+                Log.d(TAG, "onCreate: why" + barang.getJumlah_barang());
                 edtJumlah.setText(barang.getJumlah_barang());
             }
         } else {
