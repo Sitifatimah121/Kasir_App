@@ -16,7 +16,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         Button btnBarang = findViewById(R.id.btnBarang);
         btnBarang.setOnClickListener(this);
-//        Button btnTrans = findViewById(R.id.btnTrans);
+        Button btnTrans = findViewById(R.id.btnTrans);
+        btnTrans.setOnClickListener(this);
     }
 
 
@@ -25,6 +26,9 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         if (view.getId() == R.id.btnBarang){
             Intent barangIntent = new Intent(StartActivity.this, MainActivity.class);
             startActivity(barangIntent);
+        } else {
+            Intent transIntent = new Intent(StartActivity.this, TransactionActivity.class);
+            startActivity(transIntent);
         }
     }
 
