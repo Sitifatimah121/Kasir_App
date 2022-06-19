@@ -14,10 +14,10 @@
         android:theme="@style/Theme.KasirApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".BarangCrudActivity"
             android:exported="false" />
         <activity
-            android:name=".BarangCrudActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".StartActivity"
